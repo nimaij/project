@@ -9,43 +9,57 @@ Data variations
 - All loan data + country data + partner data 
 - All loan data + country data + partner data + text clustering on loan_use variable
 
+Legend
 *- completed
+>- next steaps
 
 PLAN
 1. Data visualitions to give an overview of the data
 overview
-*- loan count: by country, by year, by sector
+* loan count: by country, by year, by sector
 
 status_bin
-*- by country (map)
-*- by year
-*- by sector
-*- by country by year (map)
+* by country (map)
+* by year
+* by sector
+* by country by year (map)
 
 2. Clean data
-*- clear columns that have lots of nas
-*- drop rows of variables you want that have nas
+* clear columns that have lots of nas
+* drop rows of variables you want that have nas
 
 3. Logistic Regression
-- Run a logistic regression for each vairable-> see which variable is the best predictor
-- Understand correlation output-> omit variables that are highly correlated
-- Run a logistic regression with all variables-> see which variables are the most important
-- Get features from this and use for decision trees
+> Run a logistic regression for each vairable-> see which variable is the best predictor
+> Run a logistic regression with all variables-> see which variables are the most important
+> Get features from this and use for decision trees
 
 4. Decision Tree
-*- Create decision tree
-*- Evaluate (accuracy score and ROC)
-- Finetuning the tree
-- Compare against logistic
+* Create decision tree
+* Evaluate (accuracy score and ROC)
+* Finetuning the tree
+* Compare against logistic
 
 5. Random Forest
-- create RF
+- create RF (likely to give better results than DT)
 - Evaluate (accuracy score and ROC)
 - Finetuning
 - Compare against Logistic + Decision tree
 
+6. Applying clustering analysis to loan data
+* Clean data
+* Create document-term matrix
+* Apply LDA model
+* Visualisation
+
+7. Conclusions
+
+OTHER ITEMS
+Things to consider:
+- Skewed dependent variable: does it affect my model and results?
+- Make sure you define what you are predicting (trying to predict funded or expired?)
 
 Other ideas:
+- Restrict sameple to after the 30 day expiry got introduced (gets rid of unhelpful data)
 -  Alternative y-variable
     Using funded data: time it took to fund as
     Using expired data: share of loan that was funded
